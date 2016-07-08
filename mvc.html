@@ -1,0 +1,23 @@
+<html>
+  <head>
+       <script src="src\lib\jquery-1.11.3.js"></script>
+       <script src="src\js\model\model.js"></script>
+	   <script src="src\js\view\view.js"></script>
+       <script src="src\js\controller\controller.js"></script>
+       <script src="src\js\eventHandler.js"></script>
+	   <script>
+	  function init() {
+		var model = new ListModel(['Java', '.Net']);
+        var view = new ListView(model, {'list':$('#list'),'addButton':$('#plusBtn'),'delButton':$('#minusBtn')});
+        var controller = new ListController(model,view);
+		view.show();
+	 };
+	   </script>
+  </head>
+  <body onload="init()">
+		<select id="list" size="10"></select>
+		<button id="plusBtn">Add</button>
+		<button id="minusBtn">Remove</button>
+  </body>
+
+ <html>
