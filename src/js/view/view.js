@@ -3,6 +3,7 @@ var ListView=function(model, elements) {
     console.log(" in view");
     this.model = model;
     this.elements = elements;
+
     this.listModified = new Event(this);
     this.addButtonClicked = new Event(this);
     this.delButtonClicked = new Event(this);
@@ -33,9 +34,11 @@ var ListView=function(model, elements) {
 
 ListView.prototype = {
     show: function() {
+        console.log("in show");
         this.rebuildList();
     },
     rebuildList: function() {
+        console.log("called by Show rebuildList");
         var list, item, key;
         list = this.elements.list;
         list.html('');

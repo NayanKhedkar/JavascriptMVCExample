@@ -1,10 +1,11 @@
 // controllers respond the user action and invoke change on model
 
 var ListController=function(model, view) {
-    console.log("ListController");
+    console.log(" in controller");
     this.model = model;
     this.view = view;
     var _this = this;
+
     this.view.listModified.attach(function(sender, args) {
         _this.updateSelected(args.index);
     });
@@ -27,6 +28,7 @@ ListController.prototype = {
     },
     delItem: function() {
         var index;
+
         index = this.model.getSelectedIndex();
         if (index !== -1) {
             this.model.removedItemAt(this.model.getSelectedIndex());
